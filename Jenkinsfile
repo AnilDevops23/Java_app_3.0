@@ -108,24 +108,5 @@ pipeline{
                }
             }
         } 
-        stage('Jar file Push Artifactory : Jfrog '){
-         when { expression {  params.action == 'create' } }
-            steps{
-               script{
-                   script{
-                                def server = Artifactory.server 'jfrog1'
-                                def uploadSpec = """{
-                                    "files": [
-                                        {
-                                            "pattern": "kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar",
-                                            "target": "example-repo-local/"
-                                        }
-                                    ]
-                                }"""
-                                server.upload(uploadSpec)
-               }
-            }
-        }      
-    }
  }
 }
