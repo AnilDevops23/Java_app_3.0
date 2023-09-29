@@ -123,9 +123,9 @@ pipeline{
                                     ]
                                 }"""
                                 server.upload(uploadSpec)
-                   
                }
             }
         }      
     }
+ }
 }
